@@ -10,9 +10,7 @@ const {ethereum} = window;
 const getEthereumContract = () => {
     const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
-    const transactionContract = new ethers.Contract(contractAddress, contractABI, signer);
-    
-    return transactionContract;
+    return new ethers.Contract(contractAddress, contractABI, signer);
 }
 
 export const TransactionProvider = ({children}) => {
